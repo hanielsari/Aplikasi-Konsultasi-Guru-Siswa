@@ -44,16 +44,21 @@ class Restaurant {
     required this.rating,
   });
 
-
+<<<<<<< HEAD
   String id;
   String name;
   String description;
   String pictureId;
   String city;
   double rating;
-
-
-
+=======
+  String id; //as id teacher
+  String name; // as nama teacher
+  String description; // as description
+  String pictureId; // as image
+  String city; // as matapelajaran
+  double rating; // as rate
+>>>>>>> bdca65f (Provider dan Model menggunakan restaurant API)
 
   factory Restaurant.fromJson(Map<String, dynamic> json) => Restaurant(
     id: json["id"],
@@ -73,7 +78,7 @@ class Restaurant {
     "rating": rating,
   };
 }
-
+<<<<<<< HEAD
 class Menus {
   List<Food> foods;
 
@@ -127,7 +132,7 @@ class Food {
     "name": name,
   };
 }
-
+=======
 // class Menus {
 //   List<Food> foods;
 //
@@ -181,4 +186,4 @@ class Food {
 //     "name": name,
 //   };
 // }
-
+>>>>>>> bdca65f (Provider dan Model menggunakan restaurant API)
