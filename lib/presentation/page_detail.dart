@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../api/api_service.dart';
-import '../models/detail_guru.dart';
 import '../providers/detail_guru.dart';
 import '../widgets/detail_card.dart';
 
@@ -16,7 +15,7 @@ class RestaurantDetailPage extends StatelessWidget {
   Widget _buildDetail() {
     return ChangeNotifierProvider<DetailRestaurantProvider>(
       create: (_) =>
-          DetailRestaurantProvider(service_api: ApiService(), id: idDetail),
+          DetailRestaurantProvider(apiService: ApiService(), id: idDetail),
       child: Consumer<DetailRestaurantProvider>(
         builder: (context, state, _) {
           if (state.state == DetailResultState.Loading) {

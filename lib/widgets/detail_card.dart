@@ -1,7 +1,8 @@
 import 'package:capstone_project/models/detail_guru.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 
 class DetailRestaurant extends StatelessWidget {
   static const routeName = '/restaurant_detail';
@@ -31,12 +32,12 @@ class DetailRestaurant extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              // RatingBar.builder(
-              //   minRating: 1,
-              //   itemBuilder: (context, _) =>
-              //       Icon(Icons.star, color: Colors.amber),
-              //   onRatingUpdate: (rating) {},
-              // )
+              RatingBar.builder(
+              minRating: 1,
+              itemBuilder: (context, _) =>
+              Icon(Icons.star, color: Colors.amber),
+              onRatingUpdate: (rating) {},
+               ),
             ],
           ),
           decoration: BoxDecoration(

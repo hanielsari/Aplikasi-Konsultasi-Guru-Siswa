@@ -29,7 +29,10 @@ class MyApp extends StatelessWidget {
           //   id: ModalRoute.of(context)?.settings.arguments as String,
           // ),
           TeacherList.routeName: (context) => TeacherList(),
-          RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(idDetail: 'id',),
+          RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
+              idDetail: ModalRoute.of(context)!.settings.arguments == null
+                  ? 'null'
+                  : ModalRoute.of(context)!.settings.arguments as String),
 
         });
   }

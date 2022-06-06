@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'dart:io';
 import 'package:capstone_project/api/api_service.dart';
 import 'package:capstone_project/models/detail_guru.dart';
 
@@ -6,14 +7,14 @@ import 'package:capstone_project/models/detail_guru.dart';
 enum DetailResultState { Loading, Error, NoData, HasData }
 
 class DetailRestaurantProvider extends ChangeNotifier {
-  final ApiService service_api;
+  final ApiService apiService;
   final String id;
 
   late RestaurantDetail _detailRestaurant;
   late DetailResultState _state;
   String _message = '';
 
-  DetailRestaurantProvider({required this.id, required this.service_api}) {
+  DetailRestaurantProvider({required this.id, required this.apiService}) {
     _getDetailRestaurant(id);
   }
 
@@ -25,7 +26,7 @@ class DetailRestaurantProvider extends ChangeNotifier {
     try {
       _state = DetailResultState.Loading;
       notifyListeners();
-      final detailRestaurant = await service_api.getRestaurantDetail(id);
+      final detailRestaurant = await apiService.getRestaurantDetail(id);
       if (detailRestaurant.error) {
         _state = DetailResultState.NoData;
         notifyListeners();
@@ -34,10 +35,15 @@ class DetailRestaurantProvider extends ChangeNotifier {
         notifyListeners();
         return _detailRestaurant = detailRestaurant;
       }
+    } on SocketException {
+      _state = DetailResultState.Error;
+      notifyListeners();
+      return _message =
+      "tidak bisa terhubung, silahkan cek koneksi anda";
     } catch (e) {
       _state = DetailResultState.Error;
       notifyListeners();
-      return _message = 'Kamu tidak tersambung dengan internet';
+      return _message = e.toString();
     }
   }
 }

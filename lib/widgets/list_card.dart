@@ -17,7 +17,7 @@ class CardRestaurant extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return RestaurantDetailPage(idDetail: 'id'
+          return RestaurantDetailPage(idDetail: restaurant.id
           );
         }));
       },
