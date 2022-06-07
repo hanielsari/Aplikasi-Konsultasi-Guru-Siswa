@@ -2,6 +2,8 @@ import 'package:capstone_project/presentation/list_guru.dart';
 import 'package:capstone_project/presentation/page_detail.dart';
 import 'package:flutter/material.dart';
 
+import 'common/style.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
         title: 'Restaurant App',
         theme: ThemeData(
           colorScheme: Theme.of(context).colorScheme.copyWith(
-            primary: Colors.blue,
+            primary: secondaryColor,
             onPrimary: Colors.black,
             secondary: Colors.blue,
           ),
