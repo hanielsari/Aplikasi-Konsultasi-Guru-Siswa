@@ -69,10 +69,6 @@ class Restaurant {
     "rating": rating,
   };
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> aed7cf0 (Menambahkan Home dan Login)
 class Menus {
   List<Food> foods;
 
@@ -126,60 +122,3 @@ class Food {
     "name": name,
   };
 }
-<<<<<<< HEAD
-
-// class Menus {
-//   List<Food> foods;
-//
-//   List<Drink> drinks;
-//
-//   Menus({
-//     required this.foods,
-//     required this.drinks,
-//   });
-//
-//   factory Menus.fromJson(Map<String, dynamic> article) => Menus(
-//     foods: List<Food>.from(article["foods"].map((x) => Food.fromJson(x))),
-//     drinks:
-//     List<Drink>.from(article["drinks"].map((x) => Drink.fromJson(x))),
-//   );
-//
-//   Map<String, dynamic> toJson() => {
-//     "foods": List<dynamic>.from(foods.map((x) => x.toJson())),
-//     "drinks": List<dynamic>.from(drinks.map((x) => x.toJson())),
-//   };
-// }
-
-// class Drink {
-//   String name;
-//
-//   Drink({
-//     required this.name,
-//   });
-//
-//   factory Drink.fromJson(Map<String, dynamic> restaurant) => Drink(
-//     name: restaurant["name"],
-//   );
-//
-//   Map<String, dynamic> toJson() => {
-//     "name": name,
-//   };
-// }
-
-// class Food {
-//   String name;
-//
-//   Food({
-//     required this.name,
-//   });
-//
-//   factory Food.fromJson(Map<String, dynamic> restaurant) => Food(
-//     name: restaurant["name"],
-//   );
-//
-//   Map<String, dynamic> toJson() => {
-//     "name": name,
-//   };
-// }
-=======
->>>>>>> aed7cf0 (Menambahkan Home dan Login)
