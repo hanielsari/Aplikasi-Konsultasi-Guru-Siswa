@@ -6,7 +6,7 @@ import 'package:capstone_project/models/list_guru.dart';
 import 'package:capstone_project/providers/getlist_guru.dart';
 import 'package:capstone_project/widgets/list_card.dart';
 
-import '../common/style.dart';
+import '../../common/style.dart';
 // import 'package:submissiondicoding/widgets/platformwidget.dart';
 
 class TeacherList extends StatefulWidget {

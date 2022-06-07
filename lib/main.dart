@@ -1,7 +1,7 @@
-import 'package:capstone_project/presentation/list_guru.dart';
-import 'package:capstone_project/presentation/page_detail.dart';
+import 'package:capstone_project/ui/home/home_page.dart';
+import 'package:capstone_project/ui/list/list_guru.dart';
+import 'package:capstone_project/ui/detail/page_detail.dart';
 import 'package:flutter/material.dart';
-
 import 'common/style.dart';
 
 void main() {
@@ -24,12 +24,13 @@ class MyApp extends StatelessWidget {
             unselectedItemColor: Colors.grey,
           ),
         ),
-        initialRoute: TeacherList.routeName,
+        initialRoute: HomePage.routeName,
         routes: {
           // HomePage.routeName: (context) => HomePage(),
           // RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
           //   id: ModalRoute.of(context)?.settings.arguments as String,
           // ),
+          HomePage.routeName: (context) => HomePage(),
           TeacherList.routeName: (context) => TeacherList(),
           RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
               idDetail: ModalRoute.of(context)!.settings.arguments == null
