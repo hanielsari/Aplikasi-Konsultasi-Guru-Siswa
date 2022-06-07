@@ -43,6 +43,10 @@ dependencies:
   intl: ^0.17.0
   android_alarm_manager_plus: ^2.0.3
   flutter_rating_bar: ^4.0.1
+<<<<<<< HEAD
+=======
+  dio: ^4.0.4
+>>>>>>> aed7cf0 (Menambahkan Home dan Login)
 
 
 

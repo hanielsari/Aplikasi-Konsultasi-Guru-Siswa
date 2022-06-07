@@ -69,7 +69,10 @@ class Restaurant {
     "rating": rating,
   };
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> aed7cf0 (Menambahkan Home dan Login)
 class Menus {
   List<Food> foods;
 
@@ -123,6 +126,7 @@ class Food {
     "name": name,
   };
 }
+<<<<<<< HEAD
 
 // class Menus {
 //   List<Food> foods;
@@ -177,3 +181,5 @@ class Food {
 //     "name": name,
 //   };
 // }
+=======
+>>>>>>> aed7cf0 (Menambahkan Home dan Login)
