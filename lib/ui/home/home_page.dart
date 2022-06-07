@@ -8,15 +8,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+ /** int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
     const HomePage(),
     //const Scedhule(),
     //const Chat(),
     //const Profil()
-  ];
+  ];*/
 
-  @override
+ /**  @override
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -62,7 +62,7 @@ Widget _buildBottomNavigationBar() {
         _onItemTapped(index);
       },
     );
-  }
+  }*/
   TextEditingController controller = TextEditingController();
   @override
   Widget Builder(BuildContext context) {
