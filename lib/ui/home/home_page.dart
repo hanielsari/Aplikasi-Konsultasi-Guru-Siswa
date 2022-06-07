@@ -65,7 +65,7 @@ Widget _buildBottomNavigationBar() {
   }*/
   TextEditingController controller = TextEditingController();
   @override
-  Widget Builder(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff8CF6F0),
       appBar: AppBar(
