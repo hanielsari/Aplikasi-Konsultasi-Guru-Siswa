@@ -1,6 +1,7 @@
 import 'package:capstone_project/ui/home/home_page.dart';
 import 'package:capstone_project/ui/list/list_guru.dart';
 import 'package:capstone_project/ui/detail/page_detail.dart';
+import 'package:capstone_project/ui/navigation/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'common/style.dart';
 
@@ -24,12 +25,13 @@ class MyApp extends StatelessWidget {
             unselectedItemColor: Colors.grey,
           ),
         ),
-        initialRoute: HomePage.routeName,
+        initialRoute: NaviBot.routeName,
         routes: {
           // HomePage.routeName: (context) => HomePage(),
           // RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
           //   id: ModalRoute.of(context)?.settings.arguments as String,
           // ),
+          NaviBot.routeName: (context) => NaviBot(),
           HomePage.routeName: (context) => HomePage(),
           TeacherList.routeName: (context) => TeacherList(),
           RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
