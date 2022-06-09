@@ -25,8 +25,11 @@ final TextTheme myTextTheme = TextTheme(
       fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.25),
   button: GoogleFonts.libreFranklin(
       fontSize: 14, fontWeight: FontWeight.w500, letterSpacing: 1.25),
-  caption: GoogleFonts.libreFranklin(
+  caption: GoogleFonts.libreFranklin( 
       fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: 0.4),
   overline: GoogleFonts.libreFranklin(
       fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
 );
+final Color primaryColor = Color(0xff8CF6F0 );
+final Color secondaryColor = Color(0xff98A7F2);
+

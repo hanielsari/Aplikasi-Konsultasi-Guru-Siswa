@@ -260,7 +260,7 @@ class _LoginPageState extends State<LoginPage> {
         });
         //homePage
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => const HomePage()));
+            .push(MaterialPageRoute(builder: (context) => HomePage()));
       }
     } on DioError catch (e) {
       hideLoaderDialog(context);

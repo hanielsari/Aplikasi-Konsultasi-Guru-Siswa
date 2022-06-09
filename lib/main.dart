@@ -1,16 +1,16 @@
 import 'package:capstone_project/ui/home/home_page.dart';
-import 'package:capstone_project/ui/login/login_siswa.dart';
+import 'package:capstone_project/ui/list/list_guru.dart';
+import 'package:capstone_project/ui/detail/page_detail.dart';
+import 'package:capstone_project/ui/navigation/bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'common/style.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }

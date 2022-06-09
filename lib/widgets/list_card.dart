@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // import 'package:submissiondicoding/common/style.dart';
 import 'package:capstone_project/models/list_guru.dart';
 
-import '../presentation/page_detail.dart';
+import '../ui/detail/page_detail.dart';
 // import 'package:submissiondicoding/common/navigation.dart';
 // import 'package:submissiondicoding/ui/detail_page.dart';
 

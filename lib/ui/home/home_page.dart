@@ -1,8 +1,8 @@
-import 'package:capstone_project/presentation/list_guru.dart';
+import 'package:capstone_project/ui/list/list_guru.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  static const routeName = '/home';
 
   @override
   State<HomePage> createState() => _HomePageState();
