@@ -1,4 +1,9 @@
 import 'package:capstone_project/models/search_guru.dart';
+import 'package:capstone_project/ui/home/navigasi/about_page.dart';
+import 'package:capstone_project/ui/home/navigasi/absensi.dart';
+import 'package:capstone_project/ui/home/navigasi/feedback.dart';
+import 'package:capstone_project/ui/home/navigasi/monitoring_page.dart';
+import 'package:capstone_project/ui/home/navigasi/tipstrik_page.dart';
 import 'package:capstone_project/ui/home/search_page.dart';
 import 'package:capstone_project/ui/list/list_guru.dart';
 import 'package:flutter/material.dart';
@@ -178,7 +183,15 @@ class _HomePageState extends State<HomePage> {
                             padding: EdgeInsets.all(3),
                             //Belum ada halaman Tips and Trik
                             child: FloatingActionButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return TipsTrikPage();
+                                    },
+                                  ),
+                                );
+                              },
                               child: Image.network(
                                   "https://drive.google.com/uc?export=view&id=1LwjOt_OyOhG-nHpprr9IEuQUFeph0NIG"),
                               backgroundColor: Colors.white,
@@ -199,7 +212,15 @@ class _HomePageState extends State<HomePage> {
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
                             child: FloatingActionButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return AboutApliksi();
+                                    },
+                                  ),
+                                );
+                              },
                               child: Image.network(
                                   "https://drive.google.com/uc?export=view&id=1ZYZPwKd5vEWWmTKJJGvebymPZHWUhm9q"),
                             ),
@@ -223,7 +244,16 @@ class _HomePageState extends State<HomePage> {
                             width: 100,
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
-                            child: Center(
+                            child: FloatingActionButton(
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return Monitoring();
+                                    },
+                                  ),
+                                );
+                              },
                               child: Image.network(
                                   "https://drive.google.com/uc?export=view&id=1RokZAncVebmUr5QvjwK25DG1-miK-_L2"),
                             ),
@@ -242,7 +272,16 @@ class _HomePageState extends State<HomePage> {
                             width: 100,
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
-                            child: Center(
+                            child: FloatingActionButton(
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return Absensi();
+                                    },
+                                  ),
+                                );
+                              },
                               child: Image.network(
                                   "https://drive.google.com/uc?export=view&id=1aSoW8wSMVChQFG6MpxkTMAfa1XcTyNUy"),
                             ),
@@ -261,7 +300,16 @@ class _HomePageState extends State<HomePage> {
                             width: 100,
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
-                            child: Center(
+                            child: FloatingActionButton(
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return FeedBack();
+                                    },
+                                  ),
+                                );
+                              },
                               child: Image.network(
                                   "https://drive.google.com/uc?export=view&id=1cxWFnirtmnWhzQF9bRknFz6hzqtwB6qq"),
                             ),
