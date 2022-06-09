@@ -1,3 +1,5 @@
+import 'package:capstone_project/models/search_guru.dart';
+import 'package:capstone_project/ui/home/search_page.dart';
 import 'package:capstone_project/ui/list/list_guru.dart';
 import 'package:flutter/material.dart';
 
@@ -55,16 +57,18 @@ class _HomePageState extends State<HomePage> {
                         controller: controller,
                         style: TextStyle(color: Colors.black.withOpacity(0.6)),
                         decoration: InputDecoration(
-                          hintText: 'Cari guru yang ingin kamu konsultasi',
-                          hintStyle:
-                              TextStyle(color: Colors.black.withOpacity(0.23)),
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          suffixIcon: Icon(
-                            Icons.search,
-                            color: Colors.black.withOpacity(0.6),
-                          ),
-                        ),
+                            hintText: 'Cari guru yang ingin kamu konsultasi',
+                            hintStyle: TextStyle(
+                                color: Colors.black.withOpacity(0.23)),
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            suffixIcon: IconButton(
+                                icon: Icon(Icons.search),
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                                    return RestaurantSearchPage();
+                                  }));
+                                })),
                       ),
                     ),
                   ),
@@ -172,6 +176,7 @@ class _HomePageState extends State<HomePage> {
                             width: 100,
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
+                            //Belum ada halaman Tips and Trik
                             child: FloatingActionButton(
                               onPressed: () {},
                               child: Image.network(
@@ -193,7 +198,8 @@ class _HomePageState extends State<HomePage> {
                             width: 100,
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
-                            child: Center(
+                            child: FloatingActionButton(
+                              onPressed: () {},
                               child: Image.network(
                                   "https://drive.google.com/uc?export=view&id=1ZYZPwKd5vEWWmTKJJGvebymPZHWUhm9q"),
                             ),
