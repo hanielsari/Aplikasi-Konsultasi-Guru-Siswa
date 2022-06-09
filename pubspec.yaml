@@ -44,6 +44,7 @@ dependencies:
   android_alarm_manager_plus: ^2.0.3
   flutter_rating_bar: ^4.0.1
   dio: ^4.0.6
+  google_fonts: ^2.3.1
 
 
 

@@ -15,12 +15,11 @@ class CardRestaurant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return RestaurantDetailPage(idDetail: restaurant.id
-          );
-        }));
-      },
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return RestaurantDetailPage(idDetail: restaurant.id);
+          }));
+        },
         child: Container(
           padding: EdgeInsets.only(bottom: 8.0),
           child: Card(

@@ -1,3 +1,4 @@
+import 'package:capstone_project/presentation/list_guru.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,61 +9,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- /** int _selectedIndex = 0;
-  final List<Widget> _widgetOptions = <Widget>[
-    const HomePage(),
-    //const Scedhule(),
-    //const Chat(),
-    //const Profil()
-  ];*/
-
- /**  @override
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: const Text(
-          "Restaurant App",
-          style: TextStyle(color: Colors.black),
-        ),
-        automaticallyImplyLeading: false,
-      ),
-      backgroundColor: Colors.grey.shade100,
-      body: _widgetOptions.elementAt(_selectedIndex),
-      bottomNavigationBar: _buildBottomNavigationBar(),
-    );
-  }
-Widget _buildBottomNavigationBar() {
-    return BottomNavigationBar(
-      unselectedFontSize: 0,
-      selectedFontSize: 0,
-      type: BottomNavigationBarType.fixed,
-      currentIndex: _selectedIndex,
-      selectedItemColor: Colors.black,
-      unselectedItemColor: Colors.grey.withOpacity(0.5),
-      showUnselectedLabels: false,
-      showSelectedLabels: false,
-      backgroundColor: Colors.white,
-      elevation: 0, //ketebalan shadow
-      items: const [
-        BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
-        BottomNavigationBarItem(label: 'Schedule', icon: Icon(Icons.schedule)),
-        BottomNavigationBarItem(label: 'Chat', icon: Icon(Icons.chat)),
-        BottomNavigationBarItem(label: 'Profil', icon: Icon(Icons.account_balance))
-      ],
-      onTap: (index) {
-        _onItemTapped(index);
-      },
-    );
-  }*/
   TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -168,7 +114,7 @@ Widget _buildBottomNavigationBar() {
                         ),
                       ]),
                   Row(
-                     mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -198,8 +144,39 @@ Widget _buildBottomNavigationBar() {
                             width: 100,
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
-                            child: Center(
-                              child: Image.network(""),
+                            child: FloatingActionButton(
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return TeacherList();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Image.network(
+                                  "https://drive.google.com/uc?export=view&id=1OHrHHg6U62MDSkzAqVYj3bxeyQZhYeab"),
+                              backgroundColor: Colors.white,
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(35)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
+                            padding: EdgeInsets.all(3),
+                            child: FloatingActionButton(
+                              onPressed: () {},
+                              child: Image.network(
+                                  "https://drive.google.com/uc?export=view&id=1LwjOt_OyOhG-nHpprr9IEuQUFeph0NIG"),
+                              backgroundColor: Colors.white,
                             ),
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -217,25 +194,8 @@ Widget _buildBottomNavigationBar() {
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
                             child: Center(
-                              child: Image.network(""),
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(35),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 100,
-                            width: 100,
-                            margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
-                            padding: EdgeInsets.all(3),
-                            child: Center(
-                              child: Image.network(""),
+                              child: Image.network(
+                                  "https://drive.google.com/uc?export=view&id=1ZYZPwKd5vEWWmTKJJGvebymPZHWUhm9q"),
                             ),
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -258,7 +218,8 @@ Widget _buildBottomNavigationBar() {
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
                             child: Center(
-                              child: Image.network(""),
+                              child: Image.network(
+                                  "https://drive.google.com/uc?export=view&id=1RokZAncVebmUr5QvjwK25DG1-miK-_L2"),
                             ),
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -276,7 +237,8 @@ Widget _buildBottomNavigationBar() {
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
                             child: Center(
-                              child: Image.network(""),
+                              child: Image.network(
+                                  "https://drive.google.com/uc?export=view&id=1aSoW8wSMVChQFG6MpxkTMAfa1XcTyNUy"),
                             ),
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -294,7 +256,8 @@ Widget _buildBottomNavigationBar() {
                             margin: EdgeInsets.fromLTRB(5, 10, 10, 0),
                             padding: EdgeInsets.all(3),
                             child: Center(
-                              child: Image.network(""),
+                              child: Image.network(
+                                  "https://drive.google.com/uc?export=view&id=1cxWFnirtmnWhzQF9bRknFz6hzqtwB6qq"),
                             ),
                             decoration: BoxDecoration(
                               color: Colors.white,

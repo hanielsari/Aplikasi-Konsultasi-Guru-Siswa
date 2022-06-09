@@ -1,11 +1,7 @@
-import 'package:capstone_project/presentation/list_guru.dart';
-import 'package:capstone_project/presentation/page_detail.dart';
-
-import 'package:flutter/material.dart';
-
 import 'package:capstone_project/ui/home/home_page.dart';
 import 'package:capstone_project/ui/login/login_siswa.dart';
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
