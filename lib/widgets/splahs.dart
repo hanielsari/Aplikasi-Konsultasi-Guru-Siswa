@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:capstone_project/ui/home/home_page.dart';
-import 'package:capstone_project/ui/login/login_siswa.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -33,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const LoginPage(),
+          builder: (context) => HomePage(),
         ));
   }
 

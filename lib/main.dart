@@ -1,3 +1,4 @@
+import 'package:capstone_project/ui/chat/chat_page.dart';
 import 'package:capstone_project/ui/home/home_page.dart';
 import 'package:capstone_project/ui/list/list_guru.dart';
 import 'package:capstone_project/ui/detail/page_detail.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: ChatRoom(),
     );
   }
 }
