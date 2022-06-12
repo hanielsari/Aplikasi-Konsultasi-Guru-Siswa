@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class DetailRestaurant extends StatelessWidget {
+class DetailRestaurant extends StatefulWidget {
   static const routeName = '/restaurant_detail';
 
   final RestaurantDetail_ restaurant;
@@ -12,7 +12,16 @@ class DetailRestaurant extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<DetailRestaurant> createState() => _DetailRestaurantState();
+}
+
+class _DetailRestaurantState extends State<DetailRestaurant> {
+  DateTime dateTime = DateTime(2022, 06, 10, 5, 30);
+
+  @override
   Widget build(BuildContext context) {
+    final hours = dateTime.hour.toString().padLeft(2, '0');
+    final minutes = dateTime.minute.toString().padLeft(2, '0');
     return Scaffold(
       backgroundColor: Color(0xff8CF6F0),
       appBar: AppBar(
@@ -27,7 +36,7 @@ class DetailRestaurant extends StatelessWidget {
                 radius: 50,
                 backgroundImage: NetworkImage(
                   "https://restaurant-api.dicoding.dev/images/medium/" +
-                      restaurant.pictureId,
+                      widget.restaurant.pictureId,
                 ),
               ),
               SizedBox(height: 10),
@@ -56,11 +65,11 @@ class DetailRestaurant extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    restaurant.name,
+                    widget.restaurant.name,
                     style: Theme.of(context).textTheme.subtitle1,
                   ),
                   Text(
-                    restaurant.city,
+                    widget.restaurant.city,
                     style: Theme.of(context).textTheme.subtitle1,
                   ),
                   SizedBox(height: 10),
@@ -69,7 +78,7 @@ class DetailRestaurant extends StatelessWidget {
                     style: Theme.of(context).textTheme.subtitle1,
                   ),
                   SizedBox(height: 10),
-                  Text('${restaurant.description}',
+                  Text('${widget.restaurant.description}',
                       style: Theme.of(context).textTheme.bodyText2),
                   SizedBox(height: 10),
                   Row(
@@ -142,40 +151,52 @@ class DetailRestaurant extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        height: 24,
-                        width: 124,
-                        margin: EdgeInsets.fromLTRB(35, 20, 0, 0),
-                        padding: EdgeInsets.all(3),
-                        child: Center(
-                          child: Text('TANGGAL',
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold)),
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(35),
-                        ),
+                  Center(
+                    child: Container(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                              onPressed: () async {
+                                final date = await pickDate();
+                                if (date == null) return;
+
+                                final newDateTime = DateTime(
+                                  date.year,
+                                  date.month,
+                                  date.day,
+                                  dateTime.hour,
+                                  dateTime.minute,
+                                );
+
+                                setState(() => dateTime = newDateTime);
+                              },
+                              child: Text(
+                                '${dateTime.year}/${dateTime.month}/${dateTime.day}',
+                                style: TextStyle(fontSize: 20),
+                              )),
+                          const SizedBox(height: 5),
+                          ElevatedButton(
+                            onPressed: () async {
+                              final time = await pickTime();
+                              if (time == null) return;
+
+                              final newDateTime = DateTime(
+                                dateTime.year,
+                                dateTime.month,
+                                dateTime.day,
+                                time.hour,
+                                time.minute,
+                              );
+                              setState(() => dateTime = newDateTime);
+                            },
+                            child: Text('$hours:$minutes',
+                                style: TextStyle(fontSize: 20)),
+                          ),
+                        ],
                       ),
-                      Container(
-                        height: 24,
-                        width: 124,
-                        margin: EdgeInsets.fromLTRB(0, 20, 35, 0),
-                        padding: EdgeInsets.all(3),
-                        child: Center(
-                          child: Text('JAM',
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold)),
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(35),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                   Center(
                     child: Container(
@@ -200,4 +221,16 @@ class DetailRestaurant extends StatelessWidget {
       ),
     );
   }
+
+  Future<DateTime?> pickDate() => showDatePicker(
+    context: context,
+    initialDate: dateTime,
+    firstDate: DateTime(1900),
+    lastDate: DateTime(2100),
+  );
+
+  Future<TimeOfDay?> pickTime() => showTimePicker(
+    context: context,
+    initialTime: TimeOfDay(hour: dateTime.hour, minute: dateTime.minute),
+  );
 }

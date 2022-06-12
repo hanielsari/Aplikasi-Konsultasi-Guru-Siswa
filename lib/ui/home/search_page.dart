@@ -5,8 +5,6 @@ import 'package:capstone_project/widgets/list_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../common/constant.dart';
-import '../../widgets/search_card.dart';
 
 class RestaurantSearchPage extends StatefulWidget {
   static const routeName = '/search';

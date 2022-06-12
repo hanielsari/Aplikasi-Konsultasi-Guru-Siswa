@@ -1,7 +1,6 @@
-import 'package:capstone_project/ui/detail/page_detail.dart';
 import 'package:flutter/material.dart';
 import '../models/search_guru.dart';
-
+import '../ui/detail/page_detail.dart';
 
 
 class SearchCard extends StatelessWidget {

@@ -39,7 +39,7 @@ class SearchRestaurantProvider extends ChangeNotifier {
         } else {
           _state = SearchResultState.hasData;
           notifyListeners();
-          return _restaurantResult = restaurant as SearchRestaurantResult?;
+          return _restaurantResult = restaurant;
         }
       } else {
         return _message = 'text null';

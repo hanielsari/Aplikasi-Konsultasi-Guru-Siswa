@@ -1,7 +1,9 @@
 import 'package:capstone_project/ui/home/home_page.dart';
-import 'package:capstone_project/ui/list/list_guru.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../chat/chat_page.dart';
+
 
 class NaviBot extends StatefulWidget {
   static const routeName = '/navi';
@@ -13,7 +15,7 @@ class _NaviBotState extends State<NaviBot> {
   int currentIndex= 0;
   final List<Widget> body =[
     HomePage(),
-    TeacherList(),
+    ChatRoom(),
   ];
   @override
   Widget build(BuildContext context) {
