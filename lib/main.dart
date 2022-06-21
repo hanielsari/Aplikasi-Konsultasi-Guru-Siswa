@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           // ),
           LoginPage.id: (context) => LoginPage(),
           NaviBot.routeName: (context) => NaviBot(),
-          HomePage.routeName: (context) => HomePage(),
+          HomePage.id: (context) => HomePage(),
           //Home.id: (context) => Home(),
           RegisterPage.id: (context) => RegisterPage(),
           TeacherList.routeName: (context) => TeacherList(),

@@ -6,10 +6,16 @@ import 'package:capstone_project/ui/home/navigasi/monitoring_page.dart';
 import 'package:capstone_project/ui/home/navigasi/tipstrik_page.dart';
 import 'package:capstone_project/ui/home/search_page.dart';
 import 'package:capstone_project/ui/list/list_guru.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  static const routeName = '/home';
+  static const String id = 'home';
+
+  const HomePage({Key? key}) : super(key: key);
+
+  //static const routeName = '/home';
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -17,6 +23,29 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController controller = TextEditingController();
+  final _messageTextController = TextEditingController();
+  final _auth = FirebaseAuth.instance;
+  final _firestore = FirebaseFirestore.instance;
+  late User _activeUser;
+
+  @override
+  void initState() {
+    super.initState();
+    _getCurrentUser();
+  }
+
+  void _getCurrentUser() {
+    try {
+      var currentUser = _auth.currentUser;
+
+      if (currentUser != null) {
+        _activeUser = currentUser;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 30),
-                  Text("Hai, Hani"),
+                  Text("Hai,${_activeUser.displayName}"),
                   CircleAvatar(
                     radius: 30,
                     backgroundImage: NetworkImage(''),
@@ -70,7 +99,8 @@ class _HomePageState extends State<HomePage> {
                             suffixIcon: IconButton(
                                 icon: Icon(Icons.search),
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                                  Navigator.of(context).push(
+                                      MaterialPageRoute(builder: (context) {
                                     return RestaurantSearchPage();
                                   }));
                                 })),
@@ -327,5 +357,11 @@ class _HomePageState extends State<HomePage> {
         ]),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _messageTextController.dispose();
+    super.dispose();
   }
 }
