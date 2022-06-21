@@ -1,3 +1,4 @@
+import 'package:capstone_project/testlogin/chat.dart';
 import 'package:capstone_project/ui/home/home_page.dart';
 import 'package:capstone_project/ui/home/profil.dart';
 import 'package:capstone_project/ui/home/schedule.dart';
@@ -18,7 +19,7 @@ class _NaviBotState extends State<NaviBot> {
   final List<Widget> body =[
     HomePage(),
     SchedulePage(),
-    ChatRoom(),
+    ChatPage(),
     ProfilePage(),
   ];
   @override

@@ -101,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
       final password = _passwordController.text;
 
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      Navigator.pushReplacementNamed(context, ChatPage.id);
+      Navigator.pushReplacementNamed(context, NaviBot.routeName);
     } catch (e) {
       final snackbar = SnackBar(content: Text(e.toString()));
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
