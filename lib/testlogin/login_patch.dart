@@ -1,3 +1,4 @@
+import 'package:capstone_project/testlogin/chat.dart';
 import 'package:capstone_project/testlogin/register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -100,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
       final password = _passwordController.text;
 
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      Navigator.pushReplacementNamed(context, NaviBot.routeName);
+      Navigator.pushReplacementNamed(context, ChatPage.id);
     } catch (e) {
       final snackbar = SnackBar(content: Text(e.toString()));
       ScaffoldMessenger.of(context).showSnackBar(snackbar);

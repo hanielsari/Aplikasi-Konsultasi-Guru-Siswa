@@ -1,3 +1,4 @@
+import 'package:capstone_project/testlogin/chat.dart';
 import 'package:capstone_project/testlogin/home.dart';
 import 'package:capstone_project/testlogin/login_patch.dart';
 import 'package:capstone_project/testlogin/register.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
               idDetail: ModalRoute.of(context)!.settings.arguments == null
                   ? 'null'
                   : ModalRoute.of(context)!.settings.arguments as String),
+          ChatPage.id: (context) => ChatPage(),
 
         });
   }
