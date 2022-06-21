@@ -1,13 +1,21 @@
+import 'package:capstone_project/testlogin/home.dart';
+import 'package:capstone_project/testlogin/login_patch.dart';
+import 'package:capstone_project/testlogin/register.dart';
 import 'package:capstone_project/ui/home/home_page.dart';
 import 'package:capstone_project/ui/list/list_guru.dart';
 import 'package:capstone_project/ui/detail/page_detail.dart';
-import 'package:capstone_project/ui/login/login_siswa.dart';
+//import 'package:capstone_project/ui/login/login_siswa.dart';
 import 'package:capstone_project/ui/navigation/bottom_navigation.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'common/style.dart';
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    //options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -27,15 +35,17 @@ class MyApp extends StatelessWidget {
             unselectedItemColor: Colors.grey,
           ),
         ),
-        initialRoute: NaviBot.routeName,
+        initialRoute: LoginPage.id,
         routes: {
           // HomePage.routeName: (context) => HomePage(),
           // RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
           //   id: ModalRoute.of(context)?.settings.arguments as String,
           // ),
-          LoginPage.routeName: (context) => LoginPage(),
+          LoginPage.id: (context) => LoginPage(),
           NaviBot.routeName: (context) => NaviBot(),
           HomePage.routeName: (context) => HomePage(),
+          //Home.id: (context) => Home(),
+          RegisterPage.id: (context) => RegisterPage(),
           TeacherList.routeName: (context) => TeacherList(),
           RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
               idDetail: ModalRoute.of(context)!.settings.arguments == null

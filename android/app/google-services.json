@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1039754392788",
+    "project_id": "api-konsultasi-54d5c",
+    "storage_bucket": "api-konsultasi-54d5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039754392788:android:e8d3e63f28759118b37741",
+        "android_client_info": {
+          "package_name": "com.example.capstone_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039754392788-t4jus7mu80ibsqrqc9l4s2u96a9njaoa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKZLDluPCi7jW7jlGr1BP4Q_DPejudT04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039754392788-t4jus7mu80ibsqrqc9l4s2u96a9njaoa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
