@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 30),
-                  Text("Hai,${_activeUser.displayName}"),
+                  Text("Hai,${_activeUser.email}"),
                   CircleAvatar(
                     radius: 30,
                     backgroundImage: NetworkImage(''),

@@ -1,4 +1,5 @@
 import 'package:capstone_project/testlogin/chat.dart';
+import 'package:capstone_project/testlogin/data.dart';
 import 'package:capstone_project/testlogin/home.dart';
 import 'package:capstone_project/testlogin/login_patch.dart';
 import 'package:capstone_project/testlogin/register.dart';
@@ -42,10 +43,11 @@ class MyApp extends StatelessWidget {
           // RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
           //   id: ModalRoute.of(context)?.settings.arguments as String,
           // ),
+          MainPage.routeName: (context) => MainPage(),
           LoginPage.id: (context) => LoginPage(),
           NaviBot.routeName: (context) => NaviBot(),
           HomePage.id: (context) => HomePage(),
-          //Home.id: (context) => Home(),
+          Home.id: (context) => Home(),
           RegisterPage.id: (context) => RegisterPage(),
           TeacherList.routeName: (context) => TeacherList(),
           RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(

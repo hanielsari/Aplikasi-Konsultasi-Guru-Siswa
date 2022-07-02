@@ -41,7 +41,7 @@ class _HomePageState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home ${_activeUser.email}'),
+        title: Text('Home ${_activeUser.uid}'),
       ),
     );
   }

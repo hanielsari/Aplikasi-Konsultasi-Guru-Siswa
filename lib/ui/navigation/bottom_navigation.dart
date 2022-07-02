@@ -4,7 +4,8 @@ import 'package:capstone_project/ui/home/profil.dart';
 import 'package:capstone_project/ui/home/schedule.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import '../../testlogin/data.dart';
+import '../../testlogin/home.dart';
 import '../chat/chat_page.dart';
 
 

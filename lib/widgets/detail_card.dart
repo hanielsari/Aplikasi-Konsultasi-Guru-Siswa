@@ -89,10 +89,19 @@ class _DetailRestaurantState extends State<DetailRestaurant> {
                         width: 124,
                         margin: EdgeInsets.fromLTRB(35, 35, 0, 0),
                         padding: EdgeInsets.all(3),
+                        // decoration: BoxDecoration(
+                        //   color: Colors.white,
+                        //   borderRadius: BorderRadius.circular(35),
+                        // ),
                         child: Center(
-                          child: Text('ONLINE',
+                          child: TextButton(
+                            child: Text(
+                              'ONLINE',
                               style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold)),
+                                  fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {},
+                          ),
                         ),
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -223,14 +232,14 @@ class _DetailRestaurantState extends State<DetailRestaurant> {
   }
 
   Future<DateTime?> pickDate() => showDatePicker(
-    context: context,
-    initialDate: dateTime,
-    firstDate: DateTime(1900),
-    lastDate: DateTime(2100),
-  );
+        context: context,
+        initialDate: dateTime,
+        firstDate: DateTime(1900),
+        lastDate: DateTime(2100),
+      );
 
   Future<TimeOfDay?> pickTime() => showTimePicker(
-    context: context,
-    initialTime: TimeOfDay(hour: dateTime.hour, minute: dateTime.minute),
-  );
+        context: context,
+        initialTime: TimeOfDay(hour: dateTime.hour, minute: dateTime.minute),
+      );
 }

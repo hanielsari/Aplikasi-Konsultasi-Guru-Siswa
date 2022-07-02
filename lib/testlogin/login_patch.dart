@@ -28,65 +28,75 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _isLoading
-                ? const Center(child: CircularProgressIndicator())
-                : Container(),
-            Hero(
-              tag: 'Dicoding Chatting',
-              child: Text(
-                'Dicoding Chatting',
-                style: Theme.of(context).textTheme.headline5,
-              ),
-            ),
-            const SizedBox(height: 24.0),
-            TextField(
-              controller: _emailController,
-              keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Email',
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            TextField(
-              controller: _passwordController,
-              obscureText: _obscureText,
-              decoration: InputDecoration(
-                border: const OutlineInputBorder(),
-                suffixIcon: IconButton(
-                  icon: Icon(
-                      _obscureText ? Icons.visibility : Icons.visibility_off),
-                  onPressed: () {
-                    setState(() {
-                      _obscureText = !_obscureText;
-                    });
-                  },
+      body: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Color(0xff8CF6F0),
+                  Color(0xff98A7F2),
+                ]) ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _isLoading
+                  ? const Center(child: CircularProgressIndicator())
+                  : Container(),
+              Hero(
+                tag: 'Konsultasi Siswa',
+                child: Text(
+                  'Konsultasi Siswa',
+                  style: Theme.of(context).textTheme.headline5,
                 ),
-                hintText: 'Password',
               ),
-            ),
-            const SizedBox(height: 24.0),
-            MaterialButton(
-              child: const Text('Login'),
-              color: Theme.of(context).primaryColor,
-              textTheme: ButtonTextTheme.primary,
-              height: 40,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+              const SizedBox(height: 24.0),
+              TextField(
+                controller: _emailController,
+                keyboardType: TextInputType.emailAddress,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Email',
+                ),
               ),
-              onPressed: _login,
-            ),
-            TextButton(
-              child: const Text('Does not have an account yet? Register here'),
-              onPressed: () => Navigator.pushNamed(context, RegisterPage.id),
-            ),
-          ],
+              const SizedBox(height: 8.0),
+              TextField(
+                controller: _passwordController,
+                obscureText: _obscureText,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                        _obscureText ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _obscureText = !_obscureText;
+                      });
+                    },
+                  ),
+                  hintText: 'Password',
+                ),
+              ),
+              const SizedBox(height: 24.0),
+              MaterialButton(
+                child: const Text('Login'),
+                color: Theme.of(context).primaryColor,
+                textTheme: ButtonTextTheme.primary,
+                height: 40,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                onPressed: _login,
+              ),
+              TextButton(
+                child: const Text('Does not have an account yet? Register here'),
+                onPressed: () => Navigator.pushNamed(context, RegisterPage.id),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -101,6 +111,7 @@ class _LoginPageState extends State<LoginPage> {
       final password = _passwordController.text;
 
       await _auth.signInWithEmailAndPassword(email: email, password: password);
+      //_auth.currentUser. untuk uid
       Navigator.pushReplacementNamed(context, NaviBot.routeName);
     } catch (e) {
       final snackbar = SnackBar(content: Text(e.toString()));
