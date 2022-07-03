@@ -10,6 +10,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../list/list_guru_api_percobaan.dart';
+
 class HomePage extends StatefulWidget {
   static const String id = 'home';
 
@@ -188,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) {
-                                      return TeacherList();
+                                      return TeacherLis();
                                     },
                                   ),
                                 );
