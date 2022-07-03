@@ -4,6 +4,7 @@ import 'package:capstone_project/ui/home/navigasi/absensi.dart';
 import 'package:capstone_project/ui/home/navigasi/feedback.dart';
 import 'package:capstone_project/ui/home/navigasi/monitoring_page.dart';
 import 'package:capstone_project/ui/home/navigasi/tipstrik_page.dart';
+import 'package:capstone_project/ui/home/page_search.dart';
 import 'package:capstone_project/ui/home/search_page.dart';
 import 'package:capstone_project/ui/list/list_guru.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -103,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                                 onPressed: () {
                                   Navigator.of(context).push(
                                       MaterialPageRoute(builder: (context) {
-                                    return RestaurantSearchPage();
+                                    return PageSearch();
                                   }));
                                 })),
                       ),
