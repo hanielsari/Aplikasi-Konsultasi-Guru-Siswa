@@ -21,7 +21,7 @@ class _NaviBotState extends State<NaviBot> {
     HomePage(),
     SchedulePage(),
     ChatPage(),
-    ProfilePage(),
+    // ProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {

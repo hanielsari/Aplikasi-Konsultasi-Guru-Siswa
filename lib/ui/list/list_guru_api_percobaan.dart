@@ -17,49 +17,30 @@ class _TeacherListPageState extends State<TeacherLis> {
         backgroundColor: primaryColor,
         appBar: AppBar(
           title: Text("List Guru"),
-          actions: [
-            IconButton(
-                icon: Icon(
-                  Icons.search,
-                  color: Color(0xffF5F6F8),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/search');
-                })
-          ],
         ),
-        body: StreamBuilder(
-          stream:
-              FirebaseFirestore.instance.collection('listguru').snapshots(),
-          builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-            if (!streamSnapshot.hasData) {
-              return Center(
-                child: CircularProgressIndicator(
-                  backgroundColor: Colors.blue,
-                ),
-              );
-            }
-            return ListView.builder(
-                itemCount: streamSnapshot.data!.docs.length,
-                itemBuilder: (ctx, index) {
+        body:  StreamBuilder<QuerySnapshot>(
+          stream:  FirebaseFirestore.instance.collection('list_guru').snapshots(),
+          builder: (context, snapshot) {
+            return (snapshot.connectionState == ConnectionState.waiting)
+                ? Center(child: CircularProgressIndicator())
+                : ListView.builder(
+                itemCount: snapshot.data!.docs.length,
+                itemBuilder: (context, index) {
+                  DocumentSnapshot data = snapshot.data!.docs[index];
                   return Card(
                     child: ListTile(
-                        contentPadding: EdgeInsets.all(10),
-                        title: Text("Nama : " +
-                            streamSnapshot.data!.docs[index]['nama']),
+                        title: Text(data['nama'],
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold)),
                         leading: CircleAvatar(
                             backgroundImage: NetworkImage(
-                                streamSnapshot.data!.docs[index]['foto'],
+                                snapshot.data!.docs[index]['foto'],
                                 scale: 1.0)),
-                        subtitle: Text("Guru Matapelajaran : " +
-                            streamSnapshot.data!.docs[index]['deskripsi'])),
+                        subtitle:
+                        Text("Guru Matapelajaran : " + snapshot.data!.docs[index]['guru_pel'])
+                    ),
                   );
-                  // leading: Image(streamSnapshot.data!.docs[index]['foto'])); //awalan pada circle image);
-
-                  // return ListTile(
-                  //   title: Text(streamSnapshot.data?.docs[index]['nama']),
-                  //   subtitle: Text(streamSnapshot.data?.docs[index]['deskripsi']),
-                  // );
                 });
           },
         ));

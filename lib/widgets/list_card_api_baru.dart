@@ -25,7 +25,7 @@ class CardTeacher extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 8.0),
           child: Card(
             elevation: 8,
-            color: Colors.amber.shade50,
+            color: Colors.blue,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),

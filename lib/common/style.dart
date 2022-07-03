@@ -30,6 +30,6 @@ final TextTheme myTextTheme = TextTheme(
   overline: GoogleFonts.libreFranklin(
       fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
 );
-final Color primaryColor = Color(0xff8CF6F0 );
+final Color primaryColor = Color(0xffFFFFFF );
 final Color secondaryColor = Color(0xff98A7F2);
 

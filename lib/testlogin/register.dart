@@ -31,9 +31,9 @@ class _RegisterPageState extends State<RegisterPage> {
                 ? const Center(child: CircularProgressIndicator())
                 : Container(),
             Hero(
-              tag: 'Dicoding Chatting',
+              tag: 'Konsultasi Siswa',
               child: Text(
-                'Dicoding Chatting',
+                'Konsultasi Siswa',
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),

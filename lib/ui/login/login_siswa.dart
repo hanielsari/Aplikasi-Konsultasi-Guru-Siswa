@@ -33,8 +33,8 @@ class _LoginPageState extends State<LoginPage> {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                Color(0xff8CF6F0),
-                Color(0xff98A7F2),
+                Color(0xffFFFFFF),
+                Color(0xffFFFFFF),
               ])),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
