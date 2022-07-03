@@ -64,3 +64,31 @@
 // }
 //
 //
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class pageProfile extends StatelessWidget {
+  const pageProfile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+        backgroundColor: Color(0xff98A7F2),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(12.0),
+        child: Center(
+          child: Column(children: <Widget>[
+            CircleAvatar(
+              backgroundColor: Colors.grey,
+              radius: 70.0,
+            )
+          ]),
+        ),
+      ),
+    );
+  }
+}

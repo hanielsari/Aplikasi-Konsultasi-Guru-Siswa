@@ -1,12 +1,9 @@
-import 'package:capstone_project/models/search_guru.dart';
 import 'package:capstone_project/ui/home/navigasi/about_page.dart';
 import 'package:capstone_project/ui/home/navigasi/absensi.dart';
 import 'package:capstone_project/ui/home/navigasi/feedback.dart';
 import 'package:capstone_project/ui/home/navigasi/monitoring_page.dart';
 import 'package:capstone_project/ui/home/navigasi/tipstrik_page.dart';
 import 'package:capstone_project/ui/home/page_search.dart';
-import 'package:capstone_project/ui/home/search_page.dart';
-import 'package:capstone_project/ui/list/list_guru.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

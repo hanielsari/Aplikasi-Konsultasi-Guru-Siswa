@@ -1,11 +1,10 @@
 import 'package:capstone_project/testlogin/chat.dart';
-import 'package:capstone_project/testlogin/data.dart';
 import 'package:capstone_project/testlogin/home.dart';
 import 'package:capstone_project/testlogin/login_patch.dart';
 import 'package:capstone_project/testlogin/register.dart';
 import 'package:capstone_project/ui/home/home_page.dart';
-import 'package:capstone_project/ui/list/list_guru.dart';
-import 'package:capstone_project/ui/detail/page_detail.dart';
+// import 'package:capstone_project/ui/detail/page_detail.dart';
+import 'package:capstone_project/ui/list/list_guru_api_percobaan.dart';
 //import 'package:capstone_project/ui/login/login_siswa.dart';
 import 'package:capstone_project/ui/navigation/bottom_navigation.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -43,17 +42,16 @@ class MyApp extends StatelessWidget {
           // RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
           //   id: ModalRoute.of(context)?.settings.arguments as String,
           // ),
-          MainPage.routeName: (context) => MainPage(),
           LoginPage.id: (context) => LoginPage(),
           NaviBot.routeName: (context) => NaviBot(),
           HomePage.id: (context) => HomePage(),
           Home.id: (context) => Home(),
           RegisterPage.id: (context) => RegisterPage(),
-          TeacherList.routeName: (context) => TeacherList(),
-          RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
-              idDetail: ModalRoute.of(context)!.settings.arguments == null
-                  ? 'null'
-                  : ModalRoute.of(context)!.settings.arguments as String),
+          TeacherLis.routeName: (context) => TeacherLis(),
+          // RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
+          //     idDetail: ModalRoute.of(context)!.settings.arguments == null
+          //         ? 'null'
+          //         : ModalRoute.of(context)!.settings.arguments as String),
           ChatPage.id: (context) => ChatPage(),
 
         });
