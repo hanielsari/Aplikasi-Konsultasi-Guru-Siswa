@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../../common/style.dart';
+import '../home/detail_page.dart';
+
 
 class TeacherLis extends StatefulWidget {
   static const routeName = '/list';
@@ -27,18 +30,26 @@ class _TeacherListPageState extends State<TeacherLis> {
                 itemCount: snapshot.data!.docs.length,
                 itemBuilder: (context, index) {
                   DocumentSnapshot data = snapshot.data!.docs[index];
-                  return Card(
-                    child: ListTile(
-                        title: Text(data['nama'],
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold)),
-                        leading: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                snapshot.data!.docs[index]['foto'],
-                                scale: 1.0)),
-                        subtitle:
-                        Text("Guru Matapelajaran : " + snapshot.data!.docs[index]['guru_pel'])
+                  return InkWell(  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      var restaurant =data.id;
+                      return RestaurantDetailPage(idDetail: restaurant);
+                    }));
+                  },
+
+                    child: Card(
+                      child: ListTile(
+                          title: Text(data['nama'],
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold)),
+                          leading: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  snapshot.data!.docs[index]['foto'],
+                                  scale: 1.0)),
+                          subtitle:
+                          Text("Guru Matapelajaran : " + snapshot.data!.docs[index]['guru_pel'])
+                      ),
                     ),
                   );
                 });
